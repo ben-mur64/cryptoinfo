@@ -1,0 +1,110 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #222035;
+  color: #a0ffe3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* END NECESSARY BOILER PLATE */
+
+footer {
+  background-color: #222035;
+}
+
+form {
+  max-width: 300px;
+  text-align: center;
+}
+hr.divider {
+  border-top: 1px solid #575267;
+  margin-bottom: 2rem;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+h3 {
+  text-transform: capitalize;
+}
+
+h2 {
+  color: #65dc98;
+}
+
+p {
+  font-size: 1.25em;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+label {
+  font-size: 1.25em;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+img {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+}
+
+.site-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  color: #65dc98;
+}
+
+.coin-title {
+  margin-bottom: 20px;
+}
+
+.coin-block {
+  background-color: #575267;
+  border: 2px solid #a0ffe3;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.up {
+  color: green;
+}
+
+.down {
+  color: red;
+}
