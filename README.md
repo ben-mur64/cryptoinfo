@@ -1,4 +1,4 @@
-# Microblogging Website
+# Cryptocurrency Information Website
 
 This serves as my creative project number two for CS 260 at BYU. It's a simple single-page site that lets the user pull in information about different cryptocurrencies.
 
