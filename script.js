@@ -14,10 +14,10 @@ document.getElementById("global-submit").addEventListener("click", function(even
 
     results += "<h2>Global Crypto Data</h2>"
     results += "<div class='row'>"
-    results += "<div class='col-12 col-sm-3'><h3>Active Markets:</h3><p> " + json[0].active_markets + "</p></div>";
-    results += "<div class='col-12 col-sm-3'><h3>Average Percent Change:</h3><p> " + json[0].avg_change_percent + "%</p></div>";
-    results += "<div class='col-12 col-sm-3'><h3>Number of Coins:</h3><p> " + json[0].coins_count + "</p></div>";
-    results += "<div class='col-12 col-sm-3'><h3>Total Market Cap:</h3><p> $" + json[0].total_mcap + "</p></div>";
+    results += "<div class='col-12 col-sm-3 coin-block'><h3>Active Markets:</h3><p> " + json[0].active_markets + "</p></div>";
+    results += "<div class='col-12 col-sm-3 coin-block'><h3>Average Percent Change:</h3><p> " + json[0].avg_change_percent + "%</p></div>";
+    results += "<div class='col-12 col-sm-3 coin-block'><h3>Number of Coins:</h3><p> " + json[0].coins_count + "</p></div>";
+    results += "<div class='col-12 col-sm-3 coin-block'><h3>Total Market Cap:</h3><p> $" + json[0].total_mcap + "</p></div>";
     results += "</div>"
     document.getElementById("results").innerHTML = results;
   });
@@ -30,7 +30,7 @@ document.getElementById("top-submit").addEventListener("click", function(event) 
   const value = parseInt(document.getElementById("top-input").value);
   if (value === "" || value < 1 || value > 200 || isNaN(value)) {
     console.log("Failed with " + value)
-    document.getElementById("results").innerHTML = "Please input an integer between 1 and 200";
+    document.getElementById("results").innerHTML = "Please input an integer between 1 and 200.";
     return;
   }
   console.log(value);
@@ -46,7 +46,7 @@ document.getElementById("top-submit").addEventListener("click", function(event) 
 
     results += "<div class='row'>";
     for (let i = 0; i < json.data.length; i++) {
-      results += "<div class='col-12 col-sm-3 coin-block mx-auto'>";
+      results += "<div class='col-12 col-md-3 coin-block mx-auto'>";
       results += "<h3 class='coin-title'>" + json.data[i].name + " - $" + json.data[i].symbol + "</h3>";
       results += "<p>Rank: <strong>" + json.data[i].rank + "</strong></p>";
       results += "<p>Price in USD: <strong>$" + json.data[i].price_usd + "</strong></p>";
@@ -89,6 +89,7 @@ document.getElementById("specific-submit").addEventListener("click", function(ev
   console.log(value);
 
   const url = "https://api.coinlore.net/api/tickers/";
+  document.getElementById("results").innerHTML = "<p>Loading ... </p>";
 
   fetch(url)
   .then(function(response) {
